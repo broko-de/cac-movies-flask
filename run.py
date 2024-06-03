@@ -1,6 +1,6 @@
 from flask import Flask
 from app.database import init_app
-from app.views import *
+from app.controllers import *
 
 app = Flask(__name__)
 
