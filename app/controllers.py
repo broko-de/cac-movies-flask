@@ -1,6 +1,9 @@
 from flask import jsonify, request
 from app.models import Movie
 
+def index():
+    return jsonify({'message': 'Hello World API Cac-movies'})
+
 def create_movie():
     data = request.json
     new_movie = Movie(title=data['title'], director=data['director'], release_date=data['release_date'], banner=data['banner'])

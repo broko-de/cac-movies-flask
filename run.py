@@ -11,6 +11,7 @@ app = Flask(__name__)
 init_app(app)
 
 # Rutas para el CRUD de la entidad Movie
+app.route('/', methods=['GET'])(index)
 app.route('/api/movies/', methods=['POST'])(create_movie)
 app.route('/api/movies/', methods=['GET'])(get_all_movies)
 app.route('/api/movies/<int:movie_id>', methods=['GET'])(get_movie)
