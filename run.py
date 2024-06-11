@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 from app.database import init_app
 from app.views import *
 
@@ -9,6 +10,10 @@ app = Flask(__name__)
 
 # Inicializar la base de datos con la aplicación Flask
 init_app(app)
+#permitir solicitudes desde cualquier origen
+CORS(app)
+#permitir solicitudes desde un origen específico
+#CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500"}})
 
 # Rutas para el CRUD de la entidad Movie
 app.route('/', methods=['GET'])(index)

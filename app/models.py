@@ -57,6 +57,6 @@ class Movie:
             'id_movie': self.id_movie,
             'title': self.title,
             'director': self.director,
-            'release_date': self.release_date,
+            'release_date': self.release_date.strftime('%Y-%m-%d'),
             'banner': self.banner
         }
