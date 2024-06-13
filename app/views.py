@@ -25,10 +25,10 @@ def update_movie(movie_id):
     if not movie:
         return jsonify({'message': 'Movie not found'}), 404
     data = request.json
-    movie.title = data.get('title', movie.title)
-    movie.director = data.get('director', movie.director)
-    movie.release_date = data.get('release_date', movie.release_date)
-    movie.banner = data.get('banner', movie.banner)
+    movie.title = data['title']
+    movie.director = data['director']
+    movie.release_date = data['release_date']
+    movie.banner = data['banner']
     movie.save()
     return jsonify({'message': 'Movie updated successfully'})
 
